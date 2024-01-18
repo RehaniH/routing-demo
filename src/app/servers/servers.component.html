@@ -1,0 +1,21 @@
+<div class="row">
+
+
+<div class="col-xs-12 col-md-4">
+    <div *ngFor="let server of servers">
+        <p
+        [routerLink]="['/servers', server.id]"
+        [queryParams]="{allowEdit:  server.id, another: 'some'}"
+        [fragment]="'loading'"
+        >
+        {{ server.name}}</p>
+    </div>
+    <a routerLink="../servers">Reload Page</a>
+    <button class="btn btn-success" (click)="onReload()"> Reload </button>
+</div>
+
+<div class="col-xs-12 col-md-4">
+    <router-outlet></router-outlet>
+</div>
+
+</div>
