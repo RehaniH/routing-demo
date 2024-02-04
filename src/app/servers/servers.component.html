@@ -5,7 +5,7 @@
     <div *ngFor="let server of servers">
         <p
         [routerLink]="['/servers', server.id]"
-        [queryParams]="{allowEdit:  server.id, another: 'some'}"
+        [queryParams]="{allowEdit:  server.id === 3 ? '1': '0', another: 'some'}"
         [fragment]="'loading'"
         >
         {{ server.name}}</p>
